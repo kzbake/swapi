@@ -1,0 +1,16 @@
+<div class="container">
+  <img class="stars-logo" src="https://upload.wikimedia.org/wikipedia/commons/6/6c/Star_Wars_Logo.svg">
+  <div class="btn-container">
+    <button class="btn" [ngClass]="isVisible?'clicked':''" (click)="getData()"><span class="fa fa-lg fa-star left-icon"></span>Do. Or do not. There is no try <span class="fa fa-lg fa-star right-icon"></span></button>
+  </div>
+  <div class="content-container" *ngIf="isVisible&&isMoviesLoaded&&isSpeciesLoaded&&isPeopleLoaded">
+    <span class="questions">Which of all StarWars movies has longest opening crawl?</span>
+    <span class="answers">{{movieName}}</span>
+    <span class="questions">What character(person) appeared in the most of StarWars films?</span>
+    <span class="answers">{{movieCharacter}}</span>
+    <span class="questions">What species appeared in the most of StarWars films?</span>
+    <span class="answers">{{movieSpecies.name}}({{movieSpecies.count}})</span>
+    <span class="questions">What planet in StarWars universe provided largest number of vehicle pilots?</span>
+    <span class="answers">Planet: {{moviePlanet.name}}:({{moviePlanet.counter}}) {{moviePlanet.pilots}}</span>
+  </div>
+</div>
